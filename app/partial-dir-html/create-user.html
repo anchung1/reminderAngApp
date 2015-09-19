@@ -1,0 +1,35 @@
+<div class="panel panel-info">
+
+    <div class="panel-heading">
+        <div class="panel-title text-center">
+            <p>New Account Creation</p>
+        </div>
+    </div>
+
+
+    <div class="panel-body" ng-keypress="keyPress($event)" style="background-color: moccasin">
+        <strong>User Name</strong><br/>
+        <input ng-model="user.value" type="text" placeholder="Username" ng-blur="checkUser()" autofocus>
+        <div ng-if="user.error" class="glyphicon glyphicon-asterisk" style="color: #eb2300">
+            <span class="label label-danger">Pick another user name.</span>
+        </div>
+        <br/><br/>
+
+        <strong>Password</strong><br/>
+        <input ng-model="pw.value1" type="password" placeholder="Password"><br/>
+        <input ng-model="pw.value2" type="password" placeholder="Verify Password" ng-blur="checkPW()">
+        <div ng-if="pw.error" class="glyphicon glyphicon-asterisk" style="color: #eb2300">
+            <span class="label label-danger">Password mismatch.</span>
+        </div>
+        <br/><br/>
+
+        <strong>Email</strong><br/>
+        <input ng-model="email.value1" type="text" placeholder="email address"><br/>
+        <input ng-model="email.value2" type="text" placeholder="Verify email address" ng-blur="checkEmail()">
+        <div ng-if="email.error" class="glyphicon glyphicon-asterisk" style="color: #eb2300">
+            <span class="label label-danger">{{email.errMsg}}</span>
+        </div>
+        <br/><br/>
+    </div>
+
+</div>

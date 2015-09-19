@@ -1,1 +1,74 @@
-<p>This is the partial for view 1.</p>
+<div class="container-fluid" style="padding-top: 20px">
+
+    <div class="panel panel-info col-md-offset-3 col-md-6">
+        <div class="panel-heading">
+            <h2 class="text-center">My Reminder</h2>
+        </div>
+
+        <div class="panel-body">
+            <div class="panel panel-warning" style="background-color: peachpuff;">
+                <div class="text-center">
+                    <span class="text-center" style="padding:5px 10px">
+                        <span>{{showData}}</span>
+                    </span>
+                </div>
+            </div>
+
+            <!--<div class="text-center">-->
+            <div ng-if="mode!='validated'" class="panel panel-default" style="border-style: hidden;">
+                <my-login status-call="statusCall(data)" config-data="login(data)"></my-login>
+                <br/><br/>
+                <a href="" ng-click="createAccount()">Create Account</a>
+            </div>
+
+            <div ng-switch="mode">
+                <div ng-switch-when="create">
+                    <my-create-user status-call="statusCall(data)" config-data="newUser(data)"></my-create-user>
+                </div>
+
+                <div ng-switch-when="validated">
+                    <div class="panel panel-primary">
+                        <div class="panel panel-heading">
+                            <div class="row">
+                                <p class="text-center">{{username}} Database
+                                    <i href="" class="glyphicon glyphicon-new-window pull-right" ng-click='logout()' style="padding-right: 10px"></i>
+                                </p>
+
+                                <div style="padding-right: 10px;">
+                                    <a href="" class="btn btn-warning btn-sm pull-right" ng-click="configMode({click: true})" >{{nextButtonTitle}}</a>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="panel-body">
+
+                            <div ng-if="submode=='add'">
+                                <my-add-entry status-call="statusCall(data)" keep-alive="resetTimer(set)"></my-add-entry>
+
+                            </div>
+
+                            <div ng-if="submode=='edit'">
+                                <my-add-entry status-call="statusCall(data)" title="{{title}}" keep-alive="resetTimer(set)"></my-add-entry>
+
+                            </div>
+
+                            <div ng-if="submode=='get'">
+                                <my-user-data status-call="statusCall(data)" config-mode="configMode(data)" keep-alive="resetTimer(set)"></my-user-data>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+</div>
+
+
+
