@@ -7,7 +7,7 @@ angular.module('myApp.userData', [])
         var template =
 
             '<div ng-show="hasData" class="well well-sm">{{entryData}}</div>' +
-            '<ul class="list-group">' +
+            '<ul id="entries" class="list-group">' +
                 '<li ng-attr-id="li-{{$index}}" class="list-group-item" ng-repeat="elem in dataList"  style="background-color: {{backColor}}">' +
                     '<div class="row">' +
 

@@ -28,3 +28,16 @@
   content: "";
   padding: 0;
 }
+
+#entries li:hover {
+  cursor: pointer;
+  color: blue;
+  font-size: 16px;
+  /*background-color: white;*/
+  /*background-color: #fdfcee;*/
+}
+
+#logout:hover {
+  cursor: pointer;
+  font-size: 16px;
+}

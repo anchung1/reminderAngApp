@@ -39,7 +39,7 @@ angular.module('myApp.view1', ['ngRoute'])
                 resetTimerVal = $interval(function() {
                     log('Session timed out.');
                     timerFunc();
-                }, 25000, 1);
+                }, 300000, 1);
         }
 
         function displayData(data) {
